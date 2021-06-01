@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book proj</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- <link rel="stylesheet" href="css/table.css"> -->
+</head>
+
+<body onload="onInit()">
+
+    <div class="container text-center">
+        <header>
+            <h1 class="display-4 " data-trans="title">Book shop</h1>
+            <select class="custom-select-sm mb-3 center" onchange="onSetLang(this.value)">
+                <option value="en">English</option>
+                <option value="he">עברית</option>
+                <option value="es">Spanish</option>
+            </select>
+        </header>
+
+
+        <div class="books-table">
+            <table class=" table table-striped table-bordered text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" data-trans="id-head" onclick="onSetFilter('id')">Id</th>
+                        <th scope="col" data-trans="title-head" onclick="onSetFilter('title')">Title</th>
+                        <th scope="col" data-trans="price-head" onclick="onSetFilter('price')">Price</th>
+                        <th scope="col" data-trans="actions-head" colspan="3">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="modal text-center" style="display: none;">
+            <span class="image-span"></span>
+            <span class="details"></span>
+            <div class="rate">
+                <div class="plus" onclick="onPlus()">+</div>
+                <div class="rate-num"></div>
+                <div class="minus" onclick="onMinus()">-</div>
+            </div>
+        </div> -->
+
+        <div class="modal" tabindex="-1" role="dialog" style="display: none;">
+            <div class=" modal-dialog " role="document ">
+                <div class="modal-content ">
+                    <div class="modal-header ">
+                        <h5 class="modal-title ">book details</h5>
+                        <button type="button " class="close " data-dismiss="modal " aria-label="Close " onclick="onCloseModal()">
+                    <span aria-hidden="true ">&times;</span>
+                  </button>
+                    </div>
+                    <div class="modal-body d-flex flex-column">
+                        <span class=" image-span mb-3 "></span>
+                        <span class="details "></span>
+                        <div class="rate d-flex flex-row justify-content-center align-items-center ">
+                            <div class="plus btn btn-sm btn-secondary" onclick="onPlus()">+</div>
+                            <div class="rate-num btn-light m-3"></div>
+                            <div class="minus btn btn-sm btn-secondary text-center" onclick="onMinus() ">-</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer ">
+                        <button type="button " class="btn btn-danger " data-dismiss="modal" onclick="onCloseModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="form-group " onsubmit="onAddBook(event) ">
+            <div class="addbook ">
+                <label data-trans="add-book-name " for="name ">Book name</label>
+                <input name="bookName " type="text " class="form-control-sm ">
+            </div>
+            <div class="form-group ">
+                <label data-trans="add-book-price " for="name ">Book price</label>
+                <input name="price " type="text " class="form-control-sm ">
+            </div>
+            <button data-trans="add-book-btn " class="add btn btn-primary ">Add Book</button>
+        </form>
+    </div>
+
+    <script src="lib/jquery/jquery.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js " integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns " crossorigin="anonymous "></script>
+
+    <script src="js/services/storage-service.js "></script>
+    <script src="js/services/i18n-service.js "></script>
+    <script src="js/utils.js "></script>
+    <script src="js/services/book-service.js "></script>
+    <script src="js/main.js "></script>
+</body>
+
+</html>

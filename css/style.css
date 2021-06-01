@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+}
+
+body.rtl {
+    direction: rtl;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: #009879;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    width: 70%;
+    height: 300px;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+img {
+    position: relative;
+    top: 20px;
+    width: 150;
+    height: 150px;
+    margin-bottom: 30px;
+}
+
+.bookName,
+.read,
+.update,
+.delete {
+    cursor: pointer;
+}
+
+.bookName:hover,
+.read:hover,
+.update:hover,
+.delete:hover,
+.plus:hover,
+.minus:hover,
+thead td:hover {
+    background-color: rgb(212, 209, 209);
+}
+
+.rate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px
+}
+
+.plus,
+.minus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgb(143, 143, 143);
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+
+.addbook {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+thead td {
+    cursor: pointer;
+}
+
+.details {
+    margin: 0px 15px;
+}
